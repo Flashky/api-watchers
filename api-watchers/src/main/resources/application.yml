@@ -1,0 +1,13 @@
+spring:
+  h2:
+    console:
+      enabled: true
+      # By default: /h2-console
+      #path: /console/ 
+
+server-scanner:
+  default-timeout: 50
+  default-refresh-time: 10000
+
+      
+      
