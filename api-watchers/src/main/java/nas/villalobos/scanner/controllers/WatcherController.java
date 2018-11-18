@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import brv.commons.model.dto.ServerWatcher;
 import brv.tools.daemons.exceptions.ScanDaemonNotFoundException;
-import brv.tools.model.dto.ServerWatcher;
 import nas.villalobos.scanner.services.WatcherService;
 
 @RestController

@@ -3,10 +3,10 @@ package nas.villalobos.scanner.services;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import brv.commons.model.dto.WebServer;
 import brv.tools.listeners.ServerRemovedListener;
 import brv.tools.listeners.ServerUpdatedListener;
 import brv.tools.model.ScanResult;
-import brv.tools.model.dto.WebServer;
 
 @Service
 public class ServerListenerService implements ServerRemovedListener, ServerUpdatedListener {

@@ -3,8 +3,8 @@ package nas.villalobos.scanner.services;
 import java.net.UnknownHostException;
 import java.util.List;
 
+import brv.commons.model.dto.ServerWatcher;
 import brv.tools.daemons.exceptions.ScanDaemonNotFoundException;
-import brv.tools.model.dto.ServerWatcher;
 
 /**
  * Defines the contract for a watcher service to be implemented.

@@ -15,8 +15,6 @@ pipeline {
 
 		stage('Build') {
 			steps {
-				sh 'mvn --version'
-				//sh 'mvn -f api-watchers/pom.xml clean install'
 				sh 'mvn -f api-watchers/pom.xml install'
 			}
 		}

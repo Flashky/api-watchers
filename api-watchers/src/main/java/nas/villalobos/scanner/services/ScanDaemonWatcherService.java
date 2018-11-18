@@ -9,12 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import brv.commons.model.dto.ServerWatcher;
 import brv.tools.daemons.ScanDaemon;
 import brv.tools.daemons.ScanDaemonBuilder;
 import brv.tools.daemons.exceptions.ScanDaemonNotFoundException;
 import brv.tools.daemons.manager.ScanDaemonManager;
 import brv.tools.model.ScanDaemonConfiguration;
-import brv.tools.model.dto.ServerWatcher;
 
 @Service
 public class ScanDaemonWatcherService implements WatcherService {
