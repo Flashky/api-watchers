@@ -11,8 +11,7 @@ node {
 
 	}
 
-    stage('Build')
-    {
+    stage('Build') {
                 sh 'mvn --version'
 	}
  
