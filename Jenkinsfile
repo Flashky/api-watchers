@@ -5,7 +5,7 @@ pipeline {
 		stage('Clone Repository (1/3)') {
 			steps {
 				// Get some code from a GitHub repository
-				sh 'rm -r brv-commons-model'
+				sh 'if [ -d brv-commons-model ]; then rm -r brv-commons-model'
 				sh 'mkdir brv-commons-model'
 				git 'https://github.com/Flashky/brv-commons-model.git brv-commons-model'
 			}
@@ -14,7 +14,7 @@ pipeline {
 		stage('Clone Repository (2/3)') {
 			steps {
 				// Get some code from a GitHub repository
-				sh 'rm -r repo-server-scanner'
+				sh 'if [ -d repo-server-scanner ]; then rm -r repo-server-scanner'
 				sh 'mkdir repo-server-scanner'
 				git 'https://github.com/Flashky/repo-server-scanner.git repo-server-scanner'
 			}
@@ -23,7 +23,7 @@ pipeline {
 		stage('Clone Repository (3/3)') {
 			steps {
 				// Get some code from a GitHub repository
-				sh 'rm -r api-watchers'
+				sh 'if [ -d api-watchers ]; then rm -r api-watchers'
 				sh 'mkdir api-watchers'
 				git 'https://github.com/Flashky/api-watchers.git api-watchers'
 			}
