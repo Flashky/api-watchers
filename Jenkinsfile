@@ -2,15 +2,27 @@ pipeline {
 	agent any
 	stages {
 		
-		stage('Clone Repository') {
+		stage('Clone Repository (1/3)') {
 			steps {
 				// Get some code from a GitHub repository
 				git 'https://github.com/Flashky/brv-commons-model.git'
+			}
+		}
+		
+		stage('Clone Repository (2/3)') {
+			steps {
+				// Get some code from a GitHub repository
 				git 'https://github.com/Flashky/repo-server-scanner.git'
+			}
+		}
+		
+		stage('Clone Repository (3/3)') {
+			steps {
+				// Get some code from a GitHub repository
 				git 'https://github.com/Flashky/api-watchers.git'
 			}
-
 		}
+		
 		
 		stage('Maven clean install') {
 			agent {
