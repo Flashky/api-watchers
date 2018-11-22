@@ -1,8 +1,5 @@
 pipeline {
 	agent any
-	tools {
-		maven 'M3_Jenkins' 
-	}
 	stages {
 		
 		stage('Clone Repository') {
@@ -12,10 +9,20 @@ pipeline {
 			}
 
 		}
-
-		stage('Build') {
+		
+		stage('Maven clean install') {
+			agent {
+				docker { image 'maven:3.6.0' }
+			}
+			
 			steps {
 				sh 'mvn -f api-watchers/pom.xml clean install'
+			}
+		}
+
+		stage('Docker build') {
+			steps {
+				sh 'docker build -t flashk/api-watchers:0.0.1 .'
 			}
 		}
 	}
