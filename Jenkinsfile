@@ -1,39 +1,21 @@
 pipeline {
 	agent any
+	tools {
+		maven 'M3_Jenkins' 
+	}
 	stages {
-		
-		stage('Clone Repository (1/3)') {
+
+		stage('Clone Repository') {
 			steps {
 				// Get some code from a GitHub repository
-				dir('brv-commons-model') { git 'https://github.com/Flashky/brv-commons-model.git' }
+				git 'https://github.com/Flashky/api-watchers.git'
 			}
 		}
 		
-		stage('Clone Repository (2/3)') {
-			steps {
-				// Get some code from a GitHub repository
-				dir('repo-server-scanner') { git 'https://github.com/Flashky/repo-server-scanner.git' }
-			}
-		}
-		
-		stage('Clone Repository (3/3)') {
-			steps {
-				// Get some code from a GitHub repository
-				dir('api-watchers') { git 'https://github.com/Flashky/api-watchers.git' }
-			}
-		}
-		
-		
-		stage('Maven clean install') {
-			agent {
-				docker { image 'maven:3.6.0' }
-			}
-			
-			steps {
-				sh 'mvn -f brv-commons-model/pom.xml clean install'
-				sh 'mvn -f server-scanner/pom.xml clean install'
-				sh 'mvn -f api-watchers/pom.xml clean install'
-			}
+		stage('Maven build') {
+		    steps {
+		        sh 'mvn -f api-watchers/pom.xml clean install'
+		    }
 		}
 
 		stage('Docker build') {
