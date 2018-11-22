@@ -5,21 +5,21 @@ pipeline {
 		stage('Clone Repository (1/3)') {
 			steps {
 				// Get some code from a GitHub repository
-				git 'https://github.com/Flashky/brv-commons-model.git'
+				git 'https://github.com/Flashky/brv-commons-model.git brv-commons-model'
 			}
 		}
 		
 		stage('Clone Repository (2/3)') {
 			steps {
 				// Get some code from a GitHub repository
-				git 'https://github.com/Flashky/repo-server-scanner.git'
+				git 'https://github.com/Flashky/repo-server-scanner.git repo-server-scanner'
 			}
 		}
 		
 		stage('Clone Repository (3/3)') {
 			steps {
 				// Get some code from a GitHub repository
-				git 'https://github.com/Flashky/api-watchers.git'
+				git 'https://github.com/Flashky/api-watchers.git api-watchers'
 			}
 		}
 		
